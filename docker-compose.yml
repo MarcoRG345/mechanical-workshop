@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    ports:
+      - "5080:5050"
+    depends_on:
+      - mysql
+    environment:
+      FLASK_APP: app.py
+      FLASK_ENV: development
+      FLASK_RUN_HOST: 0.0.0.0
+      FLASK_RUN_PORT: 5001
+      SQLALCHEMY_DATABASE_URI: mysql+pymysql://user:userpassword@mysql/mydatabase
+    networks:
+      app-network:
+        ipv4_address: 192.168.100.50 
+    restart: always
+
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql-container-2
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+    ports:
+      - "3300:3306"
+    volumes:
+      - ./my.cnf:/etc/mysql/my.cnf
+    networks:
+      app-network:
+        ipv4_address: 192.168.100.60 
+    restart: always
+
+  js-server:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.http
+    ports:
+      - "8081:8080"
+    depends_on:
+      - backend
+    networks:
+      app-network:
+        ipv4_address: 192.168.100.70  
+
+networks:
+  app-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.100.0/24

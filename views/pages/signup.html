@@ -1,0 +1,38 @@
+<!--login.html-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Registrarse</title>
+        <link rel="stylesheet" href="../styles/signup.css">
+    </head>
+    <body>
+        <!--img background-->
+        <img src="../assets/login-background-1.jpg" class="background-photo">
+        <!--overalay traslucid background-->
+        <div class="background-overlay"></div>
+
+        <!--barra superior-->
+        <div class="top-bar">
+            <h2>Taller<span class="mecanico-letter">Mecanico</span></h2>
+            <h3>Home</h3>
+            <h3 class="login-ref" onclick="window.location.href='login.html'">Iniciar sesion</h3>
+            <h3>Registrarse</h3>
+        </div>
+
+        <!--form container-->
+        <div class = "form-container">
+            <img src="../assets/transmition.svg" class="login-icon" >
+            <form class="form">
+                <p class="login-text">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-lock fa-stack-1x"></i>
+                </p>
+                <input type="username" class="signup-username" required="true" placeholder="Usuario"/>
+                <input type="email" class="login-username" required="true" placeholder="Correo" />
+                <input type="password" class="login-password" required="true" placeholder="Contraseña" />
+                <input type="submit" name="Login" value="Registrarse" class="login-submit" />
+            </form>
+        </div>
+        <script></script>
+    </body>
+</html>

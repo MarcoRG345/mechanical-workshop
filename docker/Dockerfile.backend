@@ -1,0 +1,23 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY src/requirements.txt .  
+
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+COPY src/ /app
+
+ENV FLASK_APP=app/app.py
+ENV FLASK_ENV=development
+
+ENV FLASK_RUN_HOST=0.0.0.0
+
+ENV PYTHONPATH=/app
+
+EXPOSE 5000
+
+COPY wait-for-it.sh /usr/local/bin/wait-for-it
+RUN chmod +x /usr/local/bin/wait-for-it
+
+CMD [ "wait-for-it", "mysql:3306", "--", "flask", "run", "--debug"]
