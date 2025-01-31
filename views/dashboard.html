@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Mecánico</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <!--img background-->
+    <img src="assets/login-background-1.jpg" class="background-photo">
+    <!--overalay traslucid background-->
+    <div class="background-overlay"></div>
+    <!--top bar-->
+    <header class="top-bar">
+        <div class="logo">Taller<span>Mecánico</span></div>
+        <nav class="menu">
+            <a href="#nosotros" onclick="window.location.replace('nosotros.html')">Nosotros</a>
+            <a href="#manuales">Manuales</a>
+        </nav>
+        <button onclick="logout()" class="logout-btn">Cerrar sesión</button>
+    </header>
+
+    <main class="dashboard">
+        <div class="catalog-container">
+        <!-- Aquí se mostrarán las cajas del catálogo -->
+            <div class="catalog-item" data-file="[TM]_chevrolet_catalogo_de_piezas_chevrolet_optra_2009.pdf">
+            Manual: Chevrolet optra 2009
+            </div>
+            <div class="catalog-item" data-file="[TM]_land_rover_manual_de_propietario_land_rover_santana_1962.pdf">
+            Manual: Land rover 1962
+            </div>
+            <div class="catalog-item" data-file="[TM]_mazda_manual_de_taller_mazda_6_2004.pdf">
+                Manual: Mazda 6 2004
+            </div>
+            <div class="catalog-item" data-file="[TM]_nissan_manual_de_motor_nissan_np300_navara_2016.pdf">
+                Manual: Nissan np300 2016
+            </div>
+            <div class="catalog-item" data-file="[TM]_seat_manual_de_taller_seat_leon_2002.pdf">
+                Manual: Seat leon 2002
+            </div>
+            <div class="catalog-item" data-file="[TM]_toyota_manual_de_taller_toyota_corolla_2012.pdf">
+                Manual: Toyota corolla2012
+            </div>
+            <div class="catalog-item" data-file="Hyundai-Accent_1995_ES__manual_de_taller_6e27b8993e.pdf">
+                Manual: Hyundai accent 1995
+            </div>
+            <div class="catalog-item" data-file="Hyundai-i10_2007-2008-2009-etc_ES__manual_de_taller_7449d5c0c4.pdf">
+                Manual: Hyundai i10 2009
+            </div>
+            <div class="catalog-item" data-file="jetta 2005.pdf"> Manual: Jetta 2005
+            </div>
+            <div class="catalog-item" data-file="[TM]_volkswagen_manual_de_taller_volkswagen_escarabajo_reparaciones_tipos_i_y_ii_1a_parte_1988.pdf"> 
+                Manual: Volkswagen 1988 </div>
+            <div class="catalog-item" data-file="[TM]_ford_manual_electrico_ford_ranger_2010.pdf">
+                Manual: Ford Ranger 2010
+                </div>
+            <div class="catalog-item" data-file="[TM]_audi_manual_de_taller_audi_tt_2002.pdf">
+                Manual: Audi TT 2002
+            </div>
+            <div class="catalog-item" data-file="[TM]_bmw_manual_de_taller_bmw_serie_3_2018.pdf">
+                Manual: Bmw serie 3 2018
+            </div>
+            <div class="catalog-item" data-file="2004-Chevrolet-Tahoe-Suburban-OM.pdf">
+                Manual: Chevrolet Tahoe Suburban 2004
+            </div>
+            <div class="catalog-item" data-file="2004-Chevrolet-Blazer-OM.pdf">
+                Manual: Chevrolet Blazer 2004
+            </div>
+            <div class="catalog-item" data-file="om_ng-chevrolet_cheyenne_my10-es_MX.pdf">
+                Manual: Chevrolet cheyenne
+            </div>
+        </div>
+    </main>
+
+  <script src="js/catalog.js"></script>
+</body>
+</html>

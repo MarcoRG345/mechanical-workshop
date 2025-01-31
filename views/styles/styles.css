@@ -3,6 +3,7 @@
 
 body, html {
   height: 100%;
+  margin: 0;
 }
 body {
   font-family: 'Open Sans';
@@ -19,42 +20,53 @@ body {
     justify-content: flex-start;
     gap: 80px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo de la barra */
+    background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     color: white;
     padding: 15px;
-    text-align: left; /* Alineación de texto a la izquierda, puedes cambiar a 'center' o 'right' */
-    position: fixed; /* Fija la barra en la parte superior */
+    text-align: left;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 100; /* As*/
+    z-index: 100;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ajusta el contenido en pantallas más pequeñas */
 }
-.mecanico-letter{
-    color:rgb(255, 0, 0);
+.mecanico-letter {
+    color: rgb(255, 0, 0);
 }
-.signup-ref{
+.signup-ref {
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
-.signup-ref:hover{
+.signup-ref:hover {
     cursor: pointer;
-    transform: translateY(-5px); /* Efecto de "levantarse" */
+    transform: translateY(-5px);
     box-shadow: 0 0 10px 3px rgba(255, 0, 0, 0.8);
 }
-/* Estilos para el formulario */
+.logo {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-photo {
+    height: 100%;
+}
 .form-container {
     justify-content: center;
     align-items: center;
     width: 300px;
     padding: 30px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo traslúcido */
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
 .form {
     display: flex;
     justify-content: center;
@@ -63,52 +75,48 @@ body {
     gap: 10px;
     padding: 20px;
 }
-.login-icon{
+.login-icon {
     width: 40%;
 }
-/* Estilos para los campos de entrada */
-input[type="email"],
-input[type="password"]{
+input[type="username"],
+input[type="password"] {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     border: none;
-    border-bottom: 3px solid rgba(255, 0, 0, 0.5); /* Borde rojo translúcido */
+    border-bottom: 3px solid rgba(255, 0, 0, 0.5);
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo translúcido */
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     outline: none;
-    transition: all 0.2s ease; /* Transiciones suaves afecta el cambio de estado de los campos */
+    transition: all 0.2s ease;
 }
-/* Efecto al enfocar un campo */
-input[type="email"]:focus,
+input[type="username"]:focus,
 input[type="password"]:focus {
-    border-bottom-color: rgba(255, 0, 0, 1); /* Subrayado rojo sólido */
+    border-bottom-color: rgba(255, 0, 0, 1);
 }
-
-/* Botón de envío */
 input[type="submit"] {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background-color: rgba(255, 0, 0, 0.7); /* Fondo rojo translúcido */
+    background-color: rgba(255, 0, 0, 0.7);
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Animaciones suaves */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 input[type="submit"]:hover {
-    background-color: rgb(36, 3, 3); /* Fondo más rojo */
-    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.7); /* Sombra al pasar el ratón */
+    background-color: rgb(36, 3, 3);
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.7);
 }
 .background-photo {
     position: absolute;
-    background-size: cover; /* Hace que la imagen cubra todo el fondo */
-    background-position: center; /* Centra la imagen en el fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    object-fit: cover; /* no deformar la pagina*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
     z-index: -1;
     width: 100%;
     height: 100%;
@@ -119,6 +127,63 @@ input[type="submit"]:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Capa negra semitransparente */
-    z-index: -1; /* Debajo del formulario, encima de la imagen */
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* Media Queries para hacerlo responsive */
+@media (max-width: 1024px) {
+    .top-bar {
+        gap: 40px;
+    }
+    .logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .form-container {
+        width: 80%; /* Aumenta el tamaño del formulario en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        align-items: center;
+    }
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 20px;
+    }
+    .logo {
+        margin: 0;
+    }
+    .form-container {
+        width: 90%;
+        margin-top: 80px;
+        padding: 20px;
+    }
+    .form {
+        width: 100%;
+    }
+    .login-icon {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        gap: 20px;
+        padding: 8px;
+    }
+    .form-container {
+        width: 95%;
+        margin-top: 60px;
+    }
+    .form {
+        width: 100%;
+    }
+    .login-icon {
+        width: 60%;
+    }
 }

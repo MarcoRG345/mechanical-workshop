@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller Mecánico</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <style>
+    .container-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 80vh;
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.01);
+            box-shadow: 0px 0px 25px rgba(255, 0, 0, 0.3);
+        }
+        .section {
+            flex: 1;
+            padding: 20px;
+            transition: background 0.3s ease;
+            text-align: justify;
+        }
+        .section:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .left {
+            border-right: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        h2 {
+            color: #f4a261;
+            text-align: center;
+        }
+        .red-title {
+            color: #ff3333;
+        }
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #f4a261;
+            text-align: center;
+            display: block;
+        }
+        .highlight {
+            font-weight: bold;
+            color:#ff3333;;
+        }
+        .contact p {
+            margin: 10px 0;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+        .contact span {
+            font-weight: bold;
+            color:  #ff3333;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .left {
+                border-right: none;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            }
+        }
+</style>
+</head>
+<body>
+    <!--img background-->
+    <img src="assets/login-background-1.jpg" class="background-photo">
+    <!--overalay traslucid background-->
+    <div class="background-overlay"></div>
+    <!--top bar-->
+    <header class="top-bar">
+        <div class="logo">Taller<span>Mecánico</span></div>
+        <nav class="menu">
+            <a href="#nosotros">Nosotros</a>
+            <a href="#manuales" onclick="window.location.replace('dashboard.html')">Manuales</a>
+        </nav>
+        <button onclick="logout()" class="logout-btn">Cerrar sesión</button>
+    </header>
+    <main>
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="section left">
+                    <div class="icon">👥</div>
+                    <h2 class="red-title">¿Quiénes somos?</h2>
+                    <p>Somos un grupo de <span class="highlight">ingenieros en mecánica automotriz</span>, comprometidos con brindar el <span class="highlight">mejor servicio posible</span>. Tratamos a nuestros clientes como parte de nuestra familia y cuidamos sus autos con la <span class="highlight">atención y precisión</span> que merecen.</p>
+                    <p>Garantizamos <span class="highlight">confianza y excelencia</span> en cada trabajo realizado, destacando nuestro <span class="highlight">compromiso</span> con la seguridad y el rendimiento de su vehículo. Nos especializamos en <span class="highlight">prevención, mantenimiento</span> y reparación con los más altos estándares de calidad.</p>
+                </div>
+                <div class="section right contact">
+                    <div class="icon">📞</div>
+                    <h2 class="red-title">Contáctanos</h2>
+                    <p><span>Ing. Eduardo Arias Vallejo</span> (Especialista en Diesel y maquinaria pesada)<br>📧 eduardovallejo79@gmail.com</p>
+                    <p><span>Ing. Carlos Cuevas Pérez</span> (Mecánica a gasolina y diagnóstico automotriz)<br>📧 carloscupe40@gmail.com</p>
+                    <p><span>Ing. René Gómez Navarro</span> (Mecánica a gasolina)<br>📧 renegmz6902@gmail.com</p>
+                    <p><span>Ing. Claudio Roberto Raya García</span> (Mecánica a gasolina)<br>📧 crrg08@gmail.com</p>
+                    <p><span>Ing. Christian Alfredo Vázquez Sanpablo</span> (Mecánica a gasolina)<br>📧 vazquezsanpablochristian@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

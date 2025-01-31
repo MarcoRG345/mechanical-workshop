@@ -41,6 +41,14 @@ body {
     transform: translateY(-5px); /* Efecto de "levantarse" */
     box-shadow: 0 0 10px 3px rgba(255, 0, 0, 0.8);
 }
+.logo{
+    margin-left: 450px;
+    margin-top: 10px;
+    height: 70px;
+}
+.logo-photo{
+    height: 100%;
+}
 /* Estilos para el formulario */
 .form-container {
     justify-content: center;

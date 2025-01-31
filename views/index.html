@@ -1,0 +1,39 @@
+<!--login.html-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Iniciar sesion</title>
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body>
+        <!--img background-->
+        <img src="assets/login-background-1.jpg" class="background-photo">
+        <!--overalay traslucid background-->
+        <div class="background-overlay"></div>
+        <!--barra superior-->
+        <div class="top-bar">
+            <h2>Taller<span class="mecanico-letter">Mecanico</span></h2>
+            <h3>Iniciar sesion</h3>
+            <h3 class="signup-ref" onclick="window.location.replace('signup.html')">Registrarse</h3>
+            <div class="logo">
+                <img src="assets/logo.jpg" class="logo-photo">
+            </div>
+        </div>
+        <!--form container-->
+        <div class = "form-container">
+            <img src="assets/transmition.svg" class="login-icon" >
+            <form  id="login-form" class="form">
+                <p class="login-text">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-lock fa-stack-1x"></i>
+                </p>
+                <input type="username" name="username" class="login-username" autofocus="true" required="true" placeholder="Usuario" />
+                <input type="password" name="password" class="login-password" required="true" placeholder="Contraseña" />
+                <input type="submit" name="Login" value="Iniciar" class="login-submit" />
+                <p style = "display: none;" id="text-status"></p>
+            </form>
+        </div>
+        <script src="js/login.js"></script>
+    </body>
+</html>
