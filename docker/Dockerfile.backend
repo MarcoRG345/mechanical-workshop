@@ -20,4 +20,4 @@ EXPOSE 5000
 COPY wait-for-it.sh /usr/local/bin/wait-for-it
 RUN chmod +x /usr/local/bin/wait-for-it
 
-CMD [ "wait-for-it", "mysql:3306", "--", "flask", "run", "--debug"]
+CMD [ "wait-for-it", "mysql:3306", "--timeout=60", "--","flask", "run", "--debug"]
