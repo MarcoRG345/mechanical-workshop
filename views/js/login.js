@@ -5,7 +5,7 @@ document.getElementById('login-form').addEventListener('submit', async (event) =
         password: document.querySelector('[name="password"]').value
     }
     try{
-        const response = await fetch("https://192.168.100.50:5001/auth/login", {
+        const response = await fetch("https://mechanical-workshop-g3up.onrender.com/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json" 
