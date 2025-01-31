@@ -27,7 +27,7 @@ const logout = async () => {
     const data = {
       user: "logout"
     }
-    const response = await fetch("http://192.168.100.50:5001/auth/signout", {
+    const response = await fetch("https://192.168.100.50:5001/auth/signout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json" 

@@ -6,7 +6,7 @@ document.getElementById('signup-form').addEventListener('submit', async (event) 
         mail: document.querySelector('[name="mail"]').value
     }
     try{
-        const response = await fetch("http://192.168.100.50:5001/auth/", {
+        const response = await fetch("https://192.168.100.50:5001/auth/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json" 
